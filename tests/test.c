@@ -33,10 +33,12 @@ int main() {
     int errors = 0;
     for (int i = 0; i < ARRAY_SIZE; i++) {
         if (out_asm[i] != out_ref[i]) {
-            printf("Mismatch at %d: asm=%d, ref=%d\n",
-                   i, out_asm[i], out_ref[i]);
+            printf("Mismatch at %d: asm=%d, ref=%d\n", i, out_asm[i], out_ref[i]);
             errors++;
         }
+//        else {
+//            printf("Match at %d: asm=%d, ref=%d\n", i, out_asm[i], out_ref[i]);
+//        }
     }
 
     if (errors == 0) {
