@@ -15,8 +15,8 @@ main:
      
 
 mult_matrix: 
-    // a0: n/m a1: &a a2: &b, a3: &c
-    addi sp, sp, -20 //make space on stack
+    # a0: n/m a1: &a a2: &b, a3: &c
+    addi sp, sp, -20 # make space on stack
     sw ra, 0(sp)
     sw a0, 4(sp)
     sw a1, 8(sp)
@@ -28,11 +28,11 @@ mult_matrix:
 mult_row:
 
 mult_nums:
-    // a0: &a[x] a1: &b[y]
+    # a0: &a[x] a1: &b[y]
     lw t0, 0(a0)
     lw t1, 0(a1)
-    li t2, 0 // working sum
-    li t3, 0 // mult cnt
+    li t2, 0 # working sum
+    li t3, 0 # mult cnt
     
     _mult_nums_loop:
         bgt t3, t1, _mult_nums_ret
