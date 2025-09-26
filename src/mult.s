@@ -1,16 +1,18 @@
-.data
-mat_a: .word 0, 3, 2, 0, 3, 1, 0, 3, 2
-mat_b: .word 1, 1, 0, 3, 1, 2, 0, 0, 0
-mat_c: .word 101, 101, 101, 101, 101, 101, 101, 101, 101
+#.data
+#mat_a: .word 0, 3, 2, 0, 3, 1, 0, 3, 2
+#mat_b: .word 1, 1, 0, 3, 1, 2, 0, 0, 0
+#mat_c: .word 101, 101, 101, 101, 101, 101, 101, 101, 101
 
 .text
-main:	li	sp,0x10000	#init sp
-	la	a0,mat_a	#get &a
-    	la	a1,mat_b	#get &b
-    	la	a2,mat_c	#get &c
-    	addi	a3,zero,3	#create matrix size
-    	call	mult_matrix	#call matrix multiply function
-die:	j	die    		#freeze
+.globl mult_matrix
+#
+#	li	sp,0x10000	#init sp
+#	la	a0,mat_a	#get &a
+#    	la	a1,mat_b	#get &b
+#    	la	a2,mat_c	#get &c
+#    	addi	a3,zero,3	#create matrix size
+#    	call	mult_matrix	#call matrix multiply function
+#die:	j	die    		#freeze
 
 
 #a0 = m1, a1 = m2, a2 = mResult, a3 = matrixSize
